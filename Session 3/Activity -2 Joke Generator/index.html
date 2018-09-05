@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title> Random Joke Generator</title>
+        <style>
+          #btn{
+            position: relative;
+            left:50%;
+            transform:translateX(-50%);
+          }
+          #content{
+            position: relative;
+            width:400px;
+            height:200px;
+            border: 2px solid black;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            padding:20px;
+            text-align: center;
+          }
+        </style>
+    </head>
+    <body>
+        <button id="btn"> Generate </button>
+        <div id="content"></div>
+        <script>
+            var a = document.getElementById('btn');
+            btn.onclick = function(){
+                var xhttp = new XMLHttpRequest();
+                  xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                     var res = JSON.parse(this.responseText);
+                     document.getElementById("content").innerHTML = res.value.joke;
+                        console.log(this.responseText)
+                    }
+                  };
+                  xhttp.open("GET", "http://api.icndb.com/jokes/random1http://api.icndb.com/jokes/random", true);
+                  xhttp.send();
+            }
+        </script>
+    </body>
+</html>

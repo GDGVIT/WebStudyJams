@@ -1,0 +1,13 @@
+#box{
+   position: relative;
+   width: 800px;
+   height: 600px;
+   border: 2px solid black;
+   left:50%;
+   transform: translate(-50%,0)
+}
+#element{
+   position: absolute;
+   width: 100px;
+   height: 100px;
+}
